@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+ 		<!-- Latest compiled and minified CSS -->
+ 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <script src="script.js"></script> -->
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<nav class = "navbar navbar-default">
+			<div class = "navbar-header">
+				<a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-menu-hamburger"></span></a>			
+			</div>
+		</nav>
+		<div class = "row">
+			<div class = "col-xs-1"></div>
+			<div class = "col-xs-9">
+				<div class = "row dropdown">
+					<span id = "filter-text">Group Tasks</span>
+					<!--<span class = "glyphicon glyphicon-triangle-bottom"></span>-->
+				</div>
+				<ul id = "tasks">
+					<li>
+						<div class = "row"> 
+							<span class = "col-xs-2 glyphicon glyphicon-plus" style = "padding-top: 5px"></span>
+							<input id = "taskInput" class = "col-xs-8" type= "text" placeholder = "Add a new task">
+							<span>
+								<button class = "col-xs-2 glyphicon glyphicon-ok-circle" onclick = "submitData('tasks')" style = "padding-top: 5px"></button>
+							</span>
+						</div>
+					</li>
+					<!--<li> 
+						<div id = "birthdayTask" class = "row task">
+							<span>
+								<input class = "pull-left" type = "checkbox" style = "margin-top: 12px"></input>
+							</span>
+							<a class = "col-xs-8 tasktext" onclick="openSublist('highlevelBalloon')">Plan birthday party</a>
+							<span class = "col-xs-2" style = "margin-top: 9px">
+								<p id = "birthdayCounter">0/3</p>
+							</span>
+							<br>
+							<br>
+							<div id = "highlevelBalloon" style = "display: none">
+								<ul id="balloonSublist">
+									<li><input id = "bc1" type = "checkbox" onclick = "incrementCounter('bc1', 'birthdayCounter')">Buy balloons</li>
+									<li><input id = "bc2" type = "checkbox" onclick = "incrementCounter('bc2', 'birthdayCounter')">Get cake</li>
+									<li><input id = "bc3" type = "checkbox" onclick = "incrementCounter('bc3', 'birthdayCounter')">Party favors</li>
+								</ul>
+								<br>
+								<button id = "birthdaystbutton" class = "btn btn-primary col-xs-9" onclick = "addNewSubtask('birthdayTask', 'birthdaystbutton', 'birthdaydeletebutton')">Add new subtask
+								</button>
+								<button id = "birthdaydeletebutton" class = "btn btn-danger col-xs-2 glyphicon glyphicon-trash" style = "margin-left: 15px" onclick = "confirmModal('birthdayTask')"></button>
+							</div>
+						</div>
+					</li>
+					<li> 
+						<div id = "apartmentTask" class = "row task">
+							<span>
+								<input class = "pull-left" type = "checkbox" style = "margin-top: 12px" onclick = "checkAll('apartmentSublist')">
+							</span>
+							<a class = "col-xs-8 tasktext" onclick = "openSublist('highlevelApt')">Clean apartment</a>
+							<span class = "col-xs-2" style = "margin-top: 9px">
+								<p id = "aptCounter">0/3</p>
+							</span>
+							<br>
+							<br>
+							<div id = "highlevelApt" style = "display:none">
+								<ul id="apartmentSublist">
+									<li><input id = "ac1" class = "checkboxclass" type = "checkbox" onclick = "incrementCounter('ac1', 'aptCounter')">Do dishes</li>
+									<li><input id = "ac2" class = "checkboxclass" type = "checkbox" onclick = "incrementCounter('ac2', 'aptCounter')">Clean bathroom</li>
+									<li><input id = "ac3" class = "checkboxclass" type = "checkbox" onclick = "incrementCounter('ac3', 'aptCounter')">Get borked</li>
+								</ul>
+								<br>
+								<button class = "btn btn-primary col-xs-9">Add new subtask
+								</button>
+								<button class = "btn btn-danger col-xs-2 glyphicon glyphicon-trash" style = "margin-left: 15px" onclick = "confirmModal('apartmentTask')"></button>
+							</div>
+						</div>
+					</li>-->
+				</ul>
+				<span id = "no-tasks" class = "col-xs-12">You don't have any tasks!</span>
+				<div id = "deleteModal" class = "modal">
+					<div class = "modal-content">
+						<span class = "close" onclick = 'document.getElementById("deleteModal").style.display = "none"''>x</span>
+						<p>Are you sure you want to delete this task?</p>
+						<span id ="yesModal" class = "btn btn-warning">Yes</span>
+						<span id = "noModal" class = "btn btn-secondary" onclick = 'document.getElementById("deleteModal").style.display = "none"''>No</span>
+					</div>
+				</div>
+			</div>
+			<div class = "col-xs-2"></div>
+		</div>
+	</body>
+
+	<script src = "./js/script.js" async></script>
+</html>
